@@ -72,7 +72,7 @@ int* insertionSort(int array[], int size) {
 
 int* selectionSort(int array[], int size) {
 	
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size - 1; i++) {
 		int minIndex = i;
 		
 		for (int j = i + 1; j < size; j++) {
