@@ -12,10 +12,12 @@ int* selectionSort(int array[], int size);
 int* mergeSort(int array[], int size);
 int* quickSort(int array[], int size);
 int* bogoSort(int array[], int size);
+int linearSearch(int array[], int size, int value);
+int binarySearch(int array[], int size, int value);
 void printArr(int sorted[], int size);
 
 int main() {
-	int num_elements = 100000;
+	int num_elements = 10;
 	int array[num_elements];
 	
 	srand(time(NULL));
@@ -34,6 +36,8 @@ int main() {
 	double seconds = double(end - begin) / CLOCKS_PER_SEC;
 	printArr(sorted, size);
 	cout << "Time: " << seconds << endl;
+	
+	cout << "Search result: " << linearSearch(sorted, size, 23) << endl;
 	
 }
 
@@ -102,12 +106,20 @@ int* bogoSort(int array[], int size) {
 	return array;
 }
 
-void linearSearch(int array[], int size) {
+int linearSearch(int array[], int size, int value) {
+	// Returns the first match to value. 
+	// If the array doesn't contain value, returns -1
+	for (int i = 0; i < size; i++) {
+		if (array[i] == value)
+			return i;
+	}
 	
+	return -1;
 }
 
-void binarySearch(int array[], int size) {
-	
+int binarySearch(int array[], int size, int value) {
+	// Stub
+	return -1;
 }
 
 void printArr(int sorted[], int size) {
